@@ -3074,7 +3074,7 @@ who's got any energy.\"" CR>)>)
 		      (<EQUAL? ,PRSI ,GLOBAL-COL-MARSTON>
 		       <TELL
 "\"He's an old dinosaur. A toothy one, though. I'd be wary of him. He
-think's he's 'in loco parentis' to " 'VERONICA " and Richard.\"" CR>)
+thinks he's 'in loco parentis' to " 'VERONICA " and Richard.\"" CR>)
 		      (<EQUAL? ,PRSI ,GLOBAL-LINDA>
 		       <TELL
 "\"" 'VERONICA " called her 'Richard's bar girl'.\"" CR>)
