@@ -3147,7 +3147,7 @@ floor with a look of surprise and resentment.\"" CR>)
 	(FLAGS TRANSBIT PERSON)
 	(CHARACTER 10)>
 
-<ROUTINE BUTLER-DESC-F ("OPTIONAL" (RARG <>) "AUX" OBJ)
+<ROUTINE BUTLER-DESC-F ("OPTIONAL" (RARG <>))
 	 <TELL 'BUTLER " the butler">
 	 <COND (,ENTANGLED?
 		<TELL

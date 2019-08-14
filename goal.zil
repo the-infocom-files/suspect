@@ -634,8 +634,8 @@ for the various characters, using the MOVEMENT-GOALS table."
 		<PUT .GT ,GOAL-QUEUED <>>)>>
 
 <ROUTINE ESTABLISH-GOAL (PER GOAL "OPTIONAL" (PRIORITY <>)
-			 "AUX" H HL GL GT)
-	 #DECL ((PER GOAL H) OBJECT (HL GL) FIX)
+			 "AUX" H GT)
+	 #DECL ((PER GOAL H) OBJECT)
 	 <SET H
 	      <COND (<EQUAL? .PER ,PLAYER> ,HERE)
 		    (ELSE <LOC .PER>)>>
@@ -837,8 +837,8 @@ for the various characters, using the MOVEMENT-GOALS table."
 	 <COND (<NOT .VAL> .FLG)
 	       (T .VAL)>>
 
-<ROUTINE DIR-FROM (HERE THERE "AUX" (P 0) L T O)
-	 #DECL ((HERE THERE O) OBJECT (P L) FIX)
+<ROUTINE DIR-FROM (HERE THERE "AUX" (P 0) L T)
+	 #DECL ((HERE THERE) OBJECT (P L) FIX)
  <REPEAT ()
 	 <COND (<0? <SET P <NEXTP .HERE .P>>>
 		<RFALSE>)
@@ -855,7 +855,7 @@ for the various characters, using the MOVEMENT-GOALS table."
 		<G? <GET .PER ,ATTENTION> 0>)>>
 
 <ROUTINE WHERE-UPDATE (PER "OPTIONAL" (FLG <>)
-		       "AUX" OW WT NC (CNT 0) CHR L (PER? <>))
+		       "AUX" WT NC (CNT 0) CHR L (PER? <>))
 	 <COND (<NOT <SET L <LOC .PER>>> <RFALSE>)>
 	 <SET NC <GETP .PER ,P?CHARACTER>>
 	 <SET WT <GET ,WHERE-TABLES .NC>>
