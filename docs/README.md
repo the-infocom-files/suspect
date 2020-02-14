@@ -20,14 +20,12 @@ The following sources provide further information on Suspect:
 
 ## Version History
 
-Zarf's Obsessively Complete Infocom Catalog holds copies of the game files for every existing version of Suspect listed in the Infocom Fact Sheet. It also holds the source files for versions 14/841005 and 18/850222.
-
-| Release | Serial | Story File                     | Zarf Sources      | Historical Sources |
-| -------:|:------:|:------------------------------:|:-----------------:|:------------------:|
-|      14 | 841005 |       [suspect-r14-s841005.z3] | [suspect-r14.zip] |      [revision 14] |
-|      14 | 841005 | [suspect-atari-r14-s841005.z3] |                 " |                  " |
-|      18 | 850222 |  [suspect-i189-r18-s850222.z3] | [suspect-r18.zip] |   [final revision] |
-|      18 | 850222 |  [suspect-i190-r18-s850222.z3] |                 " |                  " |
+| Release | Serial | Type | Story File                     | Obsessive Sources | Historical Sources |
+| -------:|:------:|:----:|:------------------------------:|:-----------------:|:------------------:|
+|      14 | 841005 |  PUB |       [suspect-r14-s841005.z3] | [suspect-r14.zip] |      [revision 14] |
+|      14 | 841005 |  PUB | [suspect-atari-r14-s841005.z3] |                 " |                  " |
+|      18 | 850222 |  FIN |  [suspect-i189-r18-s850222.z3] | [suspect-r18.zip] |   [final revision] |
+|      18 | 850222 |  FIN |  [suspect-i190-r18-s850222.z3] |                 " |                  " |
 
 [suspect-r14-s841005.z3]: https://eblong.com/infocom/gamefiles/suspect-r14-s841005.z3
 [suspect-r14.zip]: https://eblong.com/infocom/sources/suspect-r14.zip
