@@ -96,7 +96,7 @@ where you are standing, and she stalks off." CR>)>>
 " " 'MICHAEL " has a perfect alibi, as he was in the
 Ballroom from the time " 'VERONICA " left to when the body was discovered.">>
 
-<ROUTINE ARREST (PER "OPTIONAL" (HELPER <>) "AUX" FLG CORRECT?)
+<ROUTINE ARREST (PER "OPTIONAL" (HELPER <>) "AUX" CORRECT?)
 	 <COND (.HELPER
 		<COND (<OR <EQUAL? .PER ,VERONICA ,DETECTIVE ,DUFFY>
 			   <EQUAL? .HELPER ,VERONICA ,DETECTIVE ,DUFFY>>

@@ -115,8 +115,8 @@ Copyright (C) 1984 Infocom, Inc.  All rights reserved."
 \"SAVE\" first. ">)>
 	 <TELL ,DO-YOU-WANT-TO "stop now?">>
 
-<ROUTINE V-QUIT ("OPTIONAL" (ASK? T) "AUX" SCOR)
-	 #DECL ((ASK?) <OR ATOM <PRIMTYPE LIST>> (SCOR) FIX)
+<ROUTINE V-QUIT ("OPTIONAL" (ASK? T))
+	 #DECL ((ASK?) <OR ATOM <PRIMTYPE LIST>>)
 	 <COND (<OR <AND .ASK?
 			 <QUIT-WARNING>
 			 <YES?>>
@@ -327,7 +327,7 @@ long description (fdesc or ldesc), otherwise will print short."
 
 <GLOBAL OHERE <>>
 
-<ROUTINE GOTO (RM "OPTIONAL" (V? T) "AUX" F WT VAL (INSIDE? <>))
+<ROUTINE GOTO (RM "OPTIONAL" (V? T) "AUX" VAL (INSIDE? <>))
 	 #DECL ((RM) OBJECT)
 	 <COND (,DUFFY-SNARFED
 		<IRON-GRIP>
@@ -413,8 +413,8 @@ long description (fdesc or ldesc), otherwise will print short."
 <GLOBAL FUMBLE-NUMBER 7>
 ;<GLOBAL FUMBLE-PROB 8>
 
-<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT OBJ)
-	 #DECL ((VB) <OR ATOM FALSE> (CNT) FIX (OBJ) OBJECT)
+<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT)
+	 #DECL ((VB) <OR ATOM FALSE> (CNT) FIX)
 	 <COND (<NOT <FSET? ,PRSO ,TAKEBIT>>
 		<COND (.VB
 		       <TELL-YOU-CANT "take " <>>
@@ -680,7 +680,7 @@ tried to talk to " A ,PRSO "!" CR>)
 	       (T
 		<TELL CD ,PRSO " doesn't seem to know about that." CR>)>>
 
-<ROUTINE PRE-ASK-CONTEXT-ABOUT ("AUX" P)
+<ROUTINE PRE-ASK-CONTEXT-ABOUT ()
  <COND (<AND ,QCONTEXT
 	     <==? ,HERE ,QCONTEXT-ROOM>
 	     <==? ,HERE <META-LOC ,QCONTEXT>>>
@@ -837,8 +837,8 @@ The telephone hangs up." CR>)
 "climb onto " <>>
 		<TELL-PRSO>)>>
 
-<ROUTINE V-CLIMB-UP (DIR "OPTIONAL" (OBJ <>) "AUX" X)
-	 #DECL ((DIR) FIX (OBJ) <OR ATOM FALSE> (X) TABLE)
+<ROUTINE V-CLIMB-UP (DIR "OPTIONAL" (OBJ <>))
+	 #DECL ((DIR) FIX (OBJ) <OR ATOM FALSE>)
 	 <COND (<GETPT ,HERE .DIR>
 		<DO-WALK .DIR>
 		<RTRUE>)
@@ -1477,8 +1477,8 @@ rights." CR>
 	       (ELSE
 		<TELL "Why knock on " A ,PRSO "?" CR>)>>
 
-<ROUTINE DOOR-ROOM (HERE OBJ "AUX" (P 0) L T O)
-	 #DECL ((HERE OBJ O) OBJECT (P L) FIX)
+<ROUTINE DOOR-ROOM (HERE OBJ "AUX" (P 0) L T)
+	 #DECL ((HERE OBJ) OBJECT (P L) FIX)
 	 <REPEAT ()
 		 <COND (<0? <SET P <NEXTP .HERE .P>>>
 			<RFALSE>)
@@ -1492,7 +1492,7 @@ rights." CR>
 ;<ROUTINE V-LEAN ()
 	 <TELL-YOU-CANT "do that">>
 
-<ROUTINE V-STAND ("AUX" P)
+<ROUTINE V-STAND ()
 	 <COND (,PLAYER-HIDING
 		<PLAYER-GETS-UP>
 		<RTRUE>)
@@ -1657,8 +1657,8 @@ CTHE ,PRSO " is empty." CR>)>)
 		       <TELL-BORING>)>
 		<SETG HERE .OHERE>)>>
 
-<ROUTINE SEE-INTO? (THERE "AUX" P L T O)
-	 #DECL ((THERE O) OBJECT (P L) FIX)
+<ROUTINE SEE-INTO? (THERE "AUX" P L T)
+	 #DECL ((THERE) OBJECT (P L) FIX)
 	 <SET P 0>
 	 <REPEAT ()
 		 <COND (<0? <SET P <NEXTP ,HERE .P>>>
@@ -1743,7 +1743,7 @@ plastered." CR>)>>
 		<TELL-YOU-CANT "move " <>>
 		<TELL-PRSO>)>>
 
-<ROUTINE V-OPEN ("AUX" F STR)
+<ROUTINE V-OPEN ()
 	 <COND (<NOT <OR <FSET? ,PRSO ,CONTBIT>
 			 <FSET? ,PRSO ,DOORBIT>
 			 <FSET? ,PRSO ,WINDOWBIT>>>
@@ -1815,7 +1815,7 @@ come to your unhealthy mind, forbids it." CR>)
 		      (T <GONE-CRAZY>)>)
 	       (T <TELL "What a (ahem!) strange idea!" CR>)>>
 
-<ROUTINE PRE-READ ("AUX" VAL)
+<ROUTINE PRE-READ ()
 	 <COND (<OUTSIDE? ,HERE>
 		<TELL "It's impossible to read in the dark." CR>)
 	       (<AND ,PRSI
@@ -1855,7 +1855,7 @@ come to your unhealthy mind, forbids it." CR>)
 ;<ROUTINE V-RUB-OVER ()
 	 <TELL "You really can't expect that to help." CR>>
 
-<ROUTINE V-SAY ("AUX" V)
+<ROUTINE V-SAY ()
 	 <SETG QUOTE-FLAG <>>
 	 <SETG P-CONT <>>
 	 <TELL "Try instead: Michael, Tell me about Veronica." CR>>
@@ -1869,7 +1869,7 @@ come to your unhealthy mind, forbids it." CR>)
 		<TELL ,HAVE-TO "open it first." CR>)
 	       (T <TELL "You find nothing unusual." CR>)>>
 
-<ROUTINE PRE-SEARCH-OBJECT-FOR ("AUX" OBJ)
+<ROUTINE PRE-SEARCH-OBJECT-FOR ()
 	 <COND (<ROOM-CHECK> <RTRUE>)>
 	 <COND (<EQUAL? ,PRSO ,GLOBAL-ROOM ,GLOBAL-HERE>
 		<SETG PRSO ,HERE>)>
@@ -2041,7 +2041,7 @@ CD ,PRSO " slaps you right back. It hurts, too." CR>)
 		<SETG P-CONT <>>
 		<RFATAL>)>>
 
-<ROUTINE PRE-TELL-ME ("AUX" P OW)
+<ROUTINE PRE-TELL-ME ("AUX" OW)
 	 <SET OW ,WINNER>
 	 <COND (<AND ,QCONTEXT
 		     <==? ,HERE ,QCONTEXT-ROOM>
@@ -2071,7 +2071,7 @@ CD ,PRSO " slaps you right back. It hurts, too." CR>)
 CTHE ,PRSO " is certainly unlikely to spread the story." CR>)
 	       (T <TELL CD ,PRSO <PICK-ONE ,WHO-CARES> "." CR>)>>
 
-<ROUTINE PRE-TELL-ME-ABOUT ("AUX" P)
+<ROUTINE PRE-TELL-ME-ABOUT ()
 	 <COND (<AND ,QCONTEXT
 		     <==? ,HERE ,QCONTEXT-ROOM>
 		     <==? ,HERE <META-LOC ,QCONTEXT>>>
@@ -2087,7 +2087,7 @@ CTHE ,PRSO " is certainly unlikely to spread the story." CR>)
 <ROUTINE V-TELL-ME-ABOUT ()
 	 <TELL-ISNT-ANYONE>>
 
-<ROUTINE V-THANKS ("AUX" P)
+<ROUTINE V-THANKS ()
 	 <COND ;(<OR <AND ,PRSO <FSET? ,PRSO ,PERSON>>
 		    <AND ,QCONTEXT
 			 <==? ,HERE ,QCONTEXT-ROOM>
