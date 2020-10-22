@@ -8,7 +8,7 @@ The following sources provide further information on Suspect:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Suspect_(video_game))
 * [The Digital Antiquarian](https://www.filfre.net/2013/11/suspect/)
-* [The Interactive Fiction Database]()
+* [The Interactive Fiction Database](https://ifdb.tads.org/viewgame?id=tdbss1ekrp4ua7h4)
 * [The Infocom Gallery](http://gallery.guetech.org/suspect/suspect.html)
 * [IFWiki](http://www.ifwiki.org/index.php/Suspect)
 
